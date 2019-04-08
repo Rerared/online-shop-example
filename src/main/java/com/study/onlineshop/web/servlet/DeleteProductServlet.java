@@ -1,6 +1,7 @@
 package com.study.onlineshop.web.servlet;
 
 import com.study.onlineshop.service.ProductService;
+import com.study.onlineshop.service.ServiceLocator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class DeleteProductServlet extends HttpServlet {
-    private ProductService productService;
+    private ProductService productService = (ProductService) ServiceLocator.getService("productService");
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
